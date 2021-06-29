@@ -30,7 +30,7 @@ This project aims to create a Jenkins pipeline to deploy the Phonebook Applicati
 
       - pull the image of the app from the AWS ECR repository.
 
-      - deploy the one app for each swarm nodes using `global` mode.
+      - deploy the one app for each swarm nodes using `global` mode. ---->>>> global means create containers in all nodes
 
       - run the app on `port 80`.
 

@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: 2010-09-09
 
 Description: |
   This Cloudformation Template creates a Jenkins Server on EC2 Instance
-  using the AMI of Clarusway (ami-03f1550d415dd1663). The AMI of Clarusway 
+  using the AMI of Clarusway (ami-0ab4d1e9cf9a1215a). The AMI of Clarusway 
   Jenkins Server is published on North Virginia Region for educational purposes.
   Jenkins Server is enabled with Git, Docker and Docker Compose 
   and configured to work with EC2 Connect CLI, AWS ECR and Cloudformation using IAM role.
@@ -76,7 +76,7 @@ Resources:
   JenkinsServer:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-03f1550d415dd1663
+      ImageId: ami-0ab4d1e9cf9a1215a
       InstanceType: t2.micro
       KeyName: !Ref KeyPairName
       IamInstanceProfile: !Ref EC2ConnectProfile
