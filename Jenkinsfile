@@ -5,14 +5,13 @@ pipeline {
 
     environment{
         PATH=sh(script:"echo $PATH:/usr/local/bin", returnStdout:true).trim()
-        APP_REPO_NAME = "clarusway-repo/phonebook-app"
+        APP_REPO_NAME = "abdullah-repo/phonebook-app"
         AWS_REGION = "us-east-1"
         AWS_ACCOUNT_ID = sh(script:'export PATH="$PATH:/usr/local/bin" && aws sts get-caller-identity --query Account --output text', returnStdout:true).trim()
         ECR_REGISTRY = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
-        APP_REPO_NAME = "clarusway-repo/phonebook-app"
-        AWS_STACK_NAME = "Davids-Phonebook-App-${BUILD_NUMBER}"
+        AWS_STACK_NAME = "Abdullah-Phonebook-App-${BUILD_NUMBER}" 
         CFN_TEMPLATE = "phonebook-docker-swarm-cfn-template.yml"
-        CFN_KEYPAIR = "davidskey.pem"
+        CFN_KEYPAIR = "pablokeys.pem"
         APP_NAME = "phonebook"
         HOME_FOLDER = "/home/ec2-user"
         GIT_FOLDER = sh(script:'echo ${GIT_URL} | sed "s/.*\\///;s/.git$//"', returnStdout:true).trim()
